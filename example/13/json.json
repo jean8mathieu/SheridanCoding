@@ -1,0 +1,6 @@
+{
+  "ID-101": {"F_Name" : "Chrish", "L_Name" : "Harish", "Year" : 1980, "Department" : "Computer"},
+  "ID-102": {"F_Name" : "Robin", "L_Name" : "Smith", "Year" : 1984, "Department" : "Business"},
+  "ID-103": {"F_Name" : "Jessica", "L_Name" : "Hudson", "Year" : 1974, "Department" : "Human Ressource"}
+
+}

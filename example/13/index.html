@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Example 13</title>
+    <script type="text/javascript">
+        function find(){
+            var lname = document.getElementById("search").value;
+            var xml = new XMLHttpRequest();
+            xml.open("GET", "json.json", true);
+            xml.onreadystatechange = function(){
+                if(xml.readyState == 4 && xml.status == 200){
+                    var data = JSON.parse(xml.responseText);
+                    var out = document.getElementById("output");
+                    var info = "";
+                    info +=("<table border='1'><tr><th>First Name</th><th>Last Name</th><th>Year</th><th>Department</th></tr>")
+                    for(var object in data){
+                        if(data[object].L_Name == lname){
+                            info += "<tr><td>" + data[object].F_Name + "</td><td>" + data[object].L_Name + "</td><td>" + data[object].Year + "</td><td>" + data[object].Department + "</td></tr>";
+                        }
+                    }
+                    info +=("</table>");
+                    out.innerHTML = info;
+                }
+            };
+            xml.send();
+        }
+
+        function getBetween(){
+            var early = document.getElementById("early").value;
+            var late = document.getElementById("latest").value;
+            var xml = new XMLHttpRequest();
+            xml.open("GET", "json.json", true);
+            xml.onreadystatechange = function(){
+                if(xml.readyState == 4 && xml.status == 200){
+                    var data = JSON.parse(xml.responseText);
+                    var out = document.getElementById("output");
+                    var info = "";
+                    info +=("<table border='1'><tr><th>First Name</th><th>Last Name</th><th>Year</th><th>Department</th></tr>")
+                    for(var object in data){
+                        if(data[object].Year >= early && data[object].Year <= late){
+                            info += "<tr><td>" + data[object].F_Name + "</td><td>" + data[object].L_Name + "</td><td>" + data[object].Year + "</td><td>" + data[object].Department + "</td></tr>";
+                        }
+                    }
+                    info +=("</table>");
+                    out.innerHTML = info;
+                }
+            };
+            xml.send();
+        }
+
+        function readJSON(){
+
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Search</td>
+            <td><input type="text" id="search"></td>
+            <td colspan="2"><button onclick="find()">Search</button></td>
+        </tr>
+    </table>
+
+    <h3>Find between</h3>
+    <table>
+        <tr>
+            <th>Earliest</th>
+            <th>Latest</th>
+        </tr>
+        <tr>
+            <td><input type="number" id="early"></td>
+            <td><input type="number" id="latest"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="getBetween()">Find</button></td>
+        </tr>
+    </table>
+
+
+    <div id="output">
+
+    </div>
+</body>
+</html>

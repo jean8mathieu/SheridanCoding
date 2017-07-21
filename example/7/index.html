@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ajax Example</title>
+    <script src="//jmdev.ca/sheridan/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        function loadAjax(){
+            xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+              if((xml.readyState == 4) && (xml.status == 200)){
+                  $("h1").css("background","red").css("color","yellow");
+                  document.getElementById("h1").innerHTML = xml.responseText;
+              }
+            };
+            xml.open("GET",'sample.txt',true);
+            xml.send();
+        }
+    </script>
+</head>
+<body>
+    <h1 id="h1">This is not Ajax programming</h1>
+    <button onclick="loadAjax()">Load Ajax</button>
+</body>
+</html>

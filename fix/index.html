@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><!-- put your title here --></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<!-- put your content here -->
+
+<legend><h1>Drawing </h1></legend>
+
+
+<fieldset id="circle">
+
+    <fieldset class="color">BackgroundColor
+
+        <script>
+            function rangeChange1() {
+                var x = document.getElementById("range1").value;
+                document.getElementById("number1").innerHTML = x;
+            }
+            function rangeChange2() {
+                var y = document.getElementById("range2").value;
+                document.getElementById("number2").innerHTML = y;
+            }
+            function rangeChange3() {
+                var z = document.getElementById("range3").value;
+                document.getElementById("number3").innerHTML = z;
+            }
+        </script>
+
+
+
+        <div id="inCircle">
+            <div id="inCircle">
+                <h2>Draw Circle1 ,2, 3? you pick
+
+                    <h4>Circle1 </h4>
+                    <input type="radio" id="yesC1" name="c1-draw" value="yes" checked><label for="yesC1">
+                        Yes</label>
+                    <input type="radio" id="noC1" name="c1-draw" value="no"><label for="noC1"> No</label>
+                    <h4>Circle2 </h4>
+                    <input type="radio" id="yesC2" name="c2-draw" value="yes" checked><label for="yesC2">
+                        Yes</label>
+                    <input type="radio" id="noC2" name="c2-draw" value="no"><label for="noC2"> No</label>
+                    <h4>Circle3 </h4>
+                    <input type="radio" id="yesC3" name="c3-draw" value="yes" checked><label for="yesC3">
+                        Yes</label>
+                    <input type="radio" id="noC3" name="c3-draw" value="no"><label for="noC3"> No</label>
+            </div>
+
+
+            <div id="inCircle">
+                <h2>rotation of Circle<h2>
+                    <p id="number1">20</p>
+                    Circle1<input type="range" name="c1-rotation" value="20" min="3" max="400" onclick="rangeChange1()" id="range1"><br><br><br><br>
+                    <p id="number2">50</p>
+                    Circle2<input type="range" name="c2-rotation" value="50" min="3" max="400" onclick="rangeChange2()" id="range2"><br><br><br><br>
+                    <p id="number3">125</p>
+                    Circle3<input type="range" name="c3-rotation" value="125" min="3" max="400" onclick="rangeChange3()" id="range3"><br><br><br><br>
+            </div>
+
+            <div id="inCircle">
+                <h2>Position <input type="button"
+                                    onclick="alert('x means horizontal value(0~674) and y means vertical value(0~1119).')"
+                                    value="Help"></h2>
+                Circle1 &nbsp x <input type="number" name="c1-x" value="600" min="0" max="1119">
+                y <input type="number" name="c1-y" value="50" min="0" max="674">
+                <br><br><br><br>
+                Circle2 &nbsp x <input type="number" name="c2-x" value="630" min="0" max="1119">
+                y <input type="number" name="c2-y" value="150" min="0" max="674">
+                <br><br><br><br>
+                Circle3 &nbsp x <input type="number" name="c3-x" value="600" min="0" max="1119">
+                y <input type="number" name="c3-y" value="300" min="0" max="674">
+            </div>
+
+            <div id="inCircle">
+                <h2>Color <input type="button" onclick="alert('It draw the circle with chosen color')" value="Help">
+                </h2>
+                Circle1 <input type="color" name="c1-color" value="#eebbd6"><br><br><br><br>
+                Circle2 <input type="color" name="c2-color" value="#582b1a"><br><br><br><br>
+                Circle3 <input type="color" name="c3-color" value="#f8f7c8"><br><br><br><br>
+            </div>
+    </fieldset>
+
+
+    <div id="middleSection">
+
+        <fieldset id="tri">
+            <legend><h1>Drawing Triangle</h1></legend>
+
+            <h2>Draw a Triangle ? </h2>
+            <input type="radio" id="yesTri" name="tri-draw" value="yes" checked><label for="yesTri"> Yes</label>
+            <input type="radio" id="noTri" name="tri-draw" value="no"><label for="noTri"><label for="noTri">
+            No</label>
+
+            <h2>position
+                <input type="button"
+                       onclick="alert('Each position means a vertex of the triangle.  x (0~1119) y (0~674)')"
+                       value="Help"></h2>
+            Position1 &nbsp x <input type="number" name="tri-x1" value="450" min="0" max="1119">
+            y <input type="number" name="tri-y1" value="320" min="0" max="674"> <br>
+            Position2 &nbsp x <input type="number" name="tri-x2" value="750" min="0" max="1119">
+            y <input type="number" name="tri-y2" value="320" min="0" max="674"> <br>
+            Position3 &nbsp x <input type="number" name="tri-x3" value="600" min="0" max="1119">
+            y <input type="number" name="tri-y3" value="620" min="0" max="674"> <br>
+
+
+            <div id="bottomSection">
+                <input type="submit" value="Submit : Draw with above values">
+            </div>
+        </fieldset>
+    </div>
+</fieldset>
+</body>
+
+</html>

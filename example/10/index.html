@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+
+    <script type="text/javascript">
+        var c = 0;
+        function draw(x,y){
+            var can = document.getElementById("myCanvas");
+            var ctx = can.getContext("2d");
+            var col = ["Yellow","Red","Blue","Pink","Purple"];
+            //ctx.fillStyle = "Yellow";
+            ctx.fillStyle = (col[c]);
+            if(x == 550){
+                y+= 100;
+                x = 0;
+                //c++;
+            }else{
+                x += 5;
+                c++;
+            }
+            if(c > 5){
+                c = 1;
+            }
+
+            ctx.beginPath();
+            ctx.arc(x,y,50,0,2*Math.PI,true);
+            ctx.fill();
+
+            setTimeout('draw('+ x + ', ' + y + ');',40);
+        }
+    </script>
+</head>
+<body>
+    <canvas height="500" width="500" id="myCanvas" style="border: 5px solid #ff0000">
+
+    </canvas>
+    <button onclick="draw(0,0)">Draw</button>
+</body>
+</html>

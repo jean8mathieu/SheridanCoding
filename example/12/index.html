@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JSON Example</title>
+    <script type="text/javascript">
+        function readJSON(){
+            var xml = new XMLHttpRequest();
+            xml.open("GET", "data.json", true);
+            xml.onreadystatechange = function(){
+              if(xml.readyState == 4 && xml.status == 200){
+                  var data = JSON.parse(xml.responseText);
+                  var out = document.getElementById("output");
+                  var info = "";
+                  info +=("<table border='1'><tr><th>Name</th><th>Age</th><th>Address</th></tr>")
+                  for(var object in data){
+                      info += "<tr><td>" + data[object].name + "</td><td>" + data[object].age + "</td><td>" + data[object].address + "</td></tr>";
+                  }
+                  info +=("</table>");
+                  out.innerHTML = info;
+              }
+            };
+            xml.send();
+        }
+    </script>
+</head>
+<body onload="readJSON()">
+    <div id="output">
+
+    </div>
+</body>
+</html>

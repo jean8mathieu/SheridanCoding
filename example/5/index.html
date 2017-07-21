@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example 5</title>
+</head>
+<body>
+<script type="text/javascript">
+    function calculate(){
+        var input1 = document.getElementById("input1").value;
+        var input2 = document.getElementById("input2").value;
+
+        var answer;
+
+        answer = parseInt(input1) + parseInt(input2);
+        document.getElementById("answer").innerHTML = ("The answer is " + answer);
+    }
+</script>
+
+
+Number 1:<input type="number" id="input1"><br>
+Number 2:<input type="number" id="input2"><br>
+<button onclick="calculate()">Calculate</button>
+<p id="answer"></p>
+</body>
+</html>

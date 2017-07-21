@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+    <company>
+        <employee>
+            <name>David</name>
+            <age>28</age>
+            <address>Brampton</address>
+        </employee>
+
+        <employee>
+            <name>Harrish</name>
+            <age>30</age>
+            <address>Oakville</address>
+        </employee>
+
+        <employee>
+            <name>Henry</name>
+            <age>43</age>
+            <address>Vaughan</address>
+        </employee>
+
+    </company>

@@ -1,0 +1,42 @@
+.content{
+    width:500px;
+
+}
+#searchid
+{
+    width:500px;
+    border:solid 1px #000;
+    padding:10px;
+    font-size:14px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+#result
+{
+    position: absolute;
+    width:500px;
+    padding:10px;
+    display:none;
+    border-top:0px;
+    /*overflow:hidden;*/
+    overflow-y: scroll;
+    border:1px #CCC solid;
+    background-color: white;
+    height: 500px;
+}
+
+.show
+{
+    padding:10px;
+    border-bottom:1px #999 dashed;
+    font-size:15px;
+    height:50px;
+}
+.show:hover
+{
+    background:lightgrey;
+    color:#FFF;
+    cursor:pointer;
+}
+
